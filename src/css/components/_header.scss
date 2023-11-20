@@ -1,0 +1,75 @@
+@use '../settings/color' as color;
+@use '../settings/font-family' as ff;
+@use '../settings/font-weight' as fw;
+@use '../tools/media-queries' as mq;
+@use '../tools/function' as func;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: color.$oasis;
+  z-index: 1;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: calc(1000px + 10%);
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+
+  &__logo {
+    display: inline-block;
+    width: 150px;
+    height: auto;
+  }
+
+  &__link-list {
+    display: flex;
+
+  }
+  
+  &__link-item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  &__link-name {
+    position: relative;
+    font: fw.$semibold 1.5rem ff.$rubik;
+    text-transform: uppercase;
+  
+    &--active {
+      color: color.$yellow;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -10px;
+        border: 1px solid;
+      }
+    }
+
+    &:hover {
+      color: color.$yellow;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: -10px;
+        border: 1px solid;
+      }
+    }
+
+  }
+}

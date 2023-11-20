@@ -1,0 +1,107 @@
+@use '../settings/color' as color;
+@use '../settings/font-family' as ff;
+@use '../settings/font-weight' as fw;
+@use '../tools/media-queries' as mq;
+@use '../tools/function' as func;
+
+.main-visual {
+  height: 100vh;
+  position: relative;
+  background: url('/src/img/background.png') no-repeat;
+  background-size: 100% 100%;
+
+  &::before {
+    content: "PERRY";
+    position: absolute;
+    top: 35%;
+    left: -4%;
+    font: fw.$bold 18rem ff.$opensans;
+    color: color.$gray-b7b;
+    z-index: -1;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 250px 0 0;
+  }
+
+  &__profile {
+    width: 50%;
+    flex-grow: 1;
+  }
+
+  &__hello {
+    position: relative;
+    font: fw.$bold 4rem ff.$opensans;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 400px;
+      border: 2px solid color.$black;
+      margin-left: 15px;
+    }
+  }
+
+  &__name {
+    font: fw.$bold 7rem ff.$opensans;
+    letter-spacing: 0.02em;
+
+    &--o {
+      color: color.$primary;
+    }
+  
+    &--e {
+      color: color.$blue-053;
+    }
+  }
+
+  &__role {
+    margin-top: 20px;
+    font: fw.$bold 3rem ff.$rubik;
+    color: color.$gray;
+  }
+
+  &__links {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
+  }
+
+  &__linkedin {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__github {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+  }
+
+  &__get-cv {
+    padding: 10px 20px;
+    font: fw.$bold 1.6rem ff.$spacemono;
+    word-spacing: -5px;
+    border: 2px solid color.$primary;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: color.$primary;
+      color: color.$white;
+    }
+  }
+
+  &__main-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
