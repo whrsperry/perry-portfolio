@@ -16,7 +16,7 @@
       <a href="#" class="header__logo">
         <img src="/src/img/logo.png" alt="perry logo" class="image-contain">
       </a>
-      <div class="header__link-list">
+      <nav class="header__link-list">
         <a href="" class="header__link-item">
           <span class="header__link-name header__link-name--active">Home</span>
         </a>
@@ -32,6 +32,11 @@
         <a href="" class="header__link-item">
           <span class="header__link-name">Contact</span>
         </a>
+      </nav>
+      <div class="header__hamburger-menu js-hamburger-menu">
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
+        <span class="header__hamburger-line"></span>
       </div>
     </div>
   </header>
@@ -39,30 +44,32 @@
   <!-- ========================== Main Section =========================== -->
   <main class="main-visual">
     <div class="main-visual__wrapper">
-      <div class="main-visual__profile">
-        <div class="main-visual__main-text">
-          <h2 class="main-visual__hello">HELLO</h2>
-          <h1 class="main-visual__name">
-            I'M 
-            J<span class="main-visual__name main-visual__name--o">O</span>HN 
-            P<span class="main-visual__name main-visual__name--e">E</span>RRY
-          </h1>
-          <h3 class="main-visual__role">JUNIOR WEB DEVELOPER</h3>
+      <div class="main-visual__content">
+        <div class="main-visual__profile">
+          <div class="main-visual__main-text">
+            <h2 class="main-visual__hello">HELLO</h2>
+            <h1 class="main-visual__name">
+              I'M 
+              J<span class="main-visual__name main-visual__name--o">O</span>HN 
+              P<span class="main-visual__name main-visual__name--e">E</span>RRY
+            </h1>
+            <h3 class="main-visual__role">JUNIOR WEB DEVELOPER</h3>
+          </div>
+          <div class="main-visual__links">
+            <a href="https://www.linkedin.com/in/whrsperry/" class="main-visual__linkedin" target="#">
+              <img src="/src/img/icons/linkedin.svg" alt="linkedin-icon" class="image-contain">
+            </a>
+            <a href="https://github.com/whrsperry" class="main-visual__github" target="#">
+              <img src="/src/img/icons/github-icon.png" alt="linkedin-icon" class="image-contain">
+            </a>
+            <a href="#" target="#" class="main-visual__get-cv">
+              GET CV
+            </a>
+          </div>
         </div>
-        <div class="main-visual__links">
-          <a href="https://www.linkedin.com/in/whrsperry/" class="main-visual__linkedin" target="#">
-            <img src="/src/img/icons/linkedin.svg" alt="linkedin-icon" class="image-contain">
-          </a>
-          <a href="https://github.com/whrsperry" class="main-visual__github" target="#">
-            <img src="/src/img/icons/github-icon.png" alt="linkedin-icon" class="image-contain">
-          </a>
-          <a href="#" target="#" class="main-visual__get-cv">
-            GET CV
-          </a>
+        <div class="main-visual__main-image">
+          <img src="/src/img/main-image.jpg" alt="perry profile" class="image-contain">
         </div>
-      </div>
-      <div class="main-visual__main-image">
-        <img src="/src/img/main-image.jpg" alt="perry profile" class="image-contain">
       </div>
     </div>
   </main>
@@ -83,7 +90,7 @@
           </li>
           <li class="about__info">
             <span class="about__info-label">Phone Number:</span>
-            <span class="about__info-data">+63 962-661-0372</span>
+            <span class="about__info-data">+63 962 661 0372</span>
           </li>
           <li class="about__info">
             <span class="about__info-label">Email Address:</span>
@@ -109,6 +116,11 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ========================== Resume Section =========================== -->
+  <section class="resume">
+    <h1>Hello</h1>
   </section>
 </body>
 </html>

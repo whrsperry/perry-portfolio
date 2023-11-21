@@ -11,6 +11,12 @@
     max-width: 1140px;
     margin: 0 auto;
     padding: 80px 0;
+    @include mq.mx1200 {
+      padding: 80px 5%;
+    }
+    @include mq.sp {
+      padding: 40px 5%;
+    }
   }
 
   &__header {
@@ -19,6 +25,10 @@
     font: fw.$bold 2.4rem ff.$opensans;
     color: color.$white;
     text-align: center;
+    @include mq.sp {
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
 
     &--about {
       color: color.$orange-ff6;
@@ -29,36 +39,64 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    @include mq.sp {
+      flex-direction: column;
+      gap: 20px 0;
+    }
   }
 
   &__info-list {
-    display: flex;
-    flex-direction: column;
     width: 40%;
-    flex-wrap: 1;
-    gap: 10px 0;
+    @include mq.sp {
+      width: 100%;
+    }
   }
 
   &__info {
     display: flex;
+    width: 100%;
+    gap: 0 5px;
+    @include mq.sp {
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+    }
+    
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
   }
 
   &__info-label {
     width: 40%;
     font: fw.$semibold 1.6rem ff.$spacemono;
     color: color.$orange-ff6;
+    @include mq.sp {
+      width: 100%;
+      font-size: 1.4rem;
+    }
   }
 
   &__info-data {
     width: 50%;
     font: fw.$regular 1.6rem ff.$spacemono;
     color: color.$white;
+    @include mq.sp {
+      width: 100%;
+      font-size: 1.4rem;
+    }
   }
 
   &__border {
     border: 2px solid color.$white;
     height: 200px;
     margin: 0 30px;
+    @include mq.sp {
+      width: 100%;
+      height: unset;
+      margin: 0;
+      border: unset;
+    }
   }
 
   &__text-wrapper {
@@ -66,6 +104,9 @@
     max-height: 200px;
     padding-right: 20px;
     overflow-y: auto;
+    @include mq.sp {
+      width: 100%;
+    }
 
     /* Customize scrollbar */
     &::-webkit-scrollbar {
@@ -87,13 +128,21 @@
     display: block;
     font: fw.$medium 1.6rem ff.$spacemono;
     color: color.$white;
+    @include mq.sp {
+      font-size: 1.4rem;
+    }
   }
 
   &__intro-text {
     font: fw.$regular 1.5rem ff.$spacemono;
     color: color.$white;
+    letter-spacing: 0.05em;
     line-height: 1.5;
     white-space: pre-line;
+    @include mq.sp {
+      font-size: 1.3rem;
+      text-align: justify;
+    }
   }
 
   &__colored {

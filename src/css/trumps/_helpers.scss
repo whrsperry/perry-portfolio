@@ -7,7 +7,7 @@
 .pc {
   display: block;
   @include mq.sp {
-    display: none;
+    display: none !important;
   }
 }
 

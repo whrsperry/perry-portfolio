@@ -13,29 +13,71 @@
   &::before {
     content: "PERRY";
     position: absolute;
-    top: 35%;
+    top: 50%;
     left: -4%;
+    transform: translate(5%, -50%);
     font: fw.$bold 18rem ff.$opensans;
     color: color.$gray-b7b;
     z-index: -1;
+    @include mq.tablet {
+      width: 100%;
+      top: 30%;
+      left: -10%;
+      font-size: 12rem;
+      overflow: hidden;
+    }
+    @include mq.sp {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      text-align: center;
+      white-space: nowrap;
+    }
   }
 
   &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1140px;
+    width: 100%;
+    @include mq.mx1200 {
+      padding: 0 5%;
+    }
+    @include mq.tablet {
+      margin-top: 4%;
+    }
+  }
+
+  &__content {
     display: flex;
     align-items: center;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 300px 0 0;
+    @include mq.tablet {
+      flex-direction: column-reverse;
+    }
   }
 
   &__profile {
     width: 50%;
     flex-grow: 1;
+    @include mq.sp {
+      width: 100%;
+      margin-top: 50px;
+    }
   }
 
   &__hello {
     position: relative;
     font: fw.$bold 4rem ff.$opensans;
+    @include mq.tablet {
+      font-size: 3rem;
+    }
+    @include mq.sp {
+      font-size: 2rem;
+    }
 
     &::after {
       content: "";
@@ -44,11 +86,23 @@
       width: 400px;
       border: 2px solid color.$black;
       margin-left: 15px;
+      @include mq.tablet {
+        width: 280px;
+      }
+      @include mq.sp {
+        border: unset;
+      }
     }
   }
 
   &__name {
     font: fw.$bold 7rem ff.$opensans;
+    @include mq.tablet {
+      font-size: 5rem;
+    }
+    @include mq.sp {
+      font-size: 3rem;
+    }
 
     &--o {
       color: color.$primary;
@@ -63,6 +117,14 @@
     margin-top: 20px;
     font: fw.$bold 3rem ff.$rubik;
     color: color.$gray;
+    @include mq.tablet {
+      margin-top: 15px;
+      font-size: 2.8rem;
+    }
+    @include mq.sp {
+      margin-top: 10px;
+      font-size: 2rem;
+    }
   }
 
   &__links {
@@ -70,18 +132,33 @@
     display: flex;
     align-items: center;
     gap: 0 15px;
+    @include mq.tablet {
+      margin-top: 20px;
+    }
+    @include mq.sp {
+      margin-top: 10px;
+      gap: 0 10px;
+    }
   }
 
   &__linkedin {
     display: inline-block;
     width: 40px;
     height: 40px;
+    @include mq.sp {
+      width: 25px;
+      height: 25px;
+    }
   }
 
   &__github {
     display: inline-block;
     width: 60px;
     height: 60px;
+    @include mq.sp {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__get-cv {
@@ -90,6 +167,10 @@
     word-spacing: -5px;
     border: 2px solid color.$primary;
     border-radius: 4px;
+    @include mq.tablet {
+      padding: 5px 3%;
+      font-size: 1.4rem;
+    }
 
     &:hover {
       background-color: color.$primary;
@@ -102,5 +183,13 @@
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
+    @include mq.tablet {
+      width: 200px;
+      height: 200px;
+    }
+    @include mq.sp {
+      width: 100%;
+      max-width: 200px;
+    }
   }
 }
