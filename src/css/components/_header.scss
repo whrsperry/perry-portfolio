@@ -46,7 +46,7 @@
     text-transform: uppercase;
   
     &--active {
-      color: color.$yellow;
+      color: color.$orange-ff6;
 
       &::after {
         content: '';
@@ -59,7 +59,7 @@
     }
 
     &:hover {
-      color: color.$yellow;
+      color: color.$orange-ff6;
 
       &::after {
         content: '';
@@ -70,6 +70,5 @@
         border: 1px solid;
       }
     }
-
   }
 }
