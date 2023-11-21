@@ -1,0 +1,103 @@
+@use '../settings/color' as color;
+@use '../settings/font-family' as ff;
+@use '../settings/font-weight' as fw;
+@use '../tools/media-queries' as mq;
+@use '../tools/function' as func;
+
+.about {
+  background-color: color.$orange-f7b;
+  
+  &__wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+
+  &__header {
+    position: relative;
+    margin-bottom: 50px;
+    font: fw.$bold 2.4rem ff.$opensans;
+    color: color.$white;
+    text-align: center;
+
+    &--about {
+      color: color.$orange-ff6;
+    }
+  }
+
+  &__info-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__info-list {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    flex-wrap: 1;
+    gap: 10px 0;
+  }
+
+  &__info {
+    display: flex;
+  }
+
+  &__info-label {
+    width: 40%;
+    font: fw.$semibold 1.6rem ff.$spacemono;
+    color: color.$orange-ff6;
+  }
+
+  &__info-data {
+    width: 50%;
+    font: fw.$regular 1.6rem ff.$spacemono;
+    color: color.$white;
+  }
+
+  &__border {
+    border: 2px solid color.$white;
+    height: 200px;
+    margin: 0 30px;
+  }
+
+  &__text-wrapper {
+    width: 50%;
+    max-height: 200px;
+    padding-right: 20px;
+    overflow-y: auto;
+
+    /* Customize scrollbar */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: color.$primary;
+      border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: color.$white;
+      border-radius: 2px;
+    }
+  }
+
+  &__intro {
+    display: block;
+    font: fw.$medium 1.6rem ff.$spacemono;
+    color: color.$white;
+  }
+
+  &__intro-text {
+    font: fw.$regular 1.5rem ff.$spacemono;
+    color: color.$white;
+    line-height: 1.5;
+    white-space: pre-line;
+  }
+
+  &__colored {
+    color: color.$orange-ff6;
+    font-weight: fw.$semibold;
+  }
+}
