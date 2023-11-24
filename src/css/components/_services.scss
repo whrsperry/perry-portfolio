@@ -1,0 +1,134 @@
+@use '../settings/color' as color;
+@use '../settings/font-family' as ff;
+@use '../settings/font-weight' as fw;
+@use '../tools/media-queries' as mq;
+@use '../tools/function' as func;
+
+.services {
+  &__wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 100px 0;
+    @include mq.mx1200 {
+      padding: 80px 5%;
+    }
+    @include mq.tablet {
+      max-width: 100%;
+      padding: 50px 5%;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 80px;
+    @include mq.tablet {
+      margin-bottom: 40px;
+    }
+    @include mq.sp {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__header {
+    font: fw.$bold 3.5rem ff.$rubik;
+    text-align: center;
+    line-height: 2em;
+    @include mq.tablet {
+      font-size: 2.8rem;
+    }
+    @include mq.sp {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__caption {
+    font: fw.$regular 1.5rem ff.$opensans;
+    color: color.$gray;
+    text-align: center;
+    @include mq.tablet {
+      font-size: 1.3rem;
+    }
+    @include mq.sp {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0 20px;
+    @include mq.tablet {
+      flex-wrap: wrap;
+      gap: 0 3%;
+    }
+    @include mq.sp {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 20px;
+    gap: 30px 0;
+    cursor: pointer;
+    transition: all 0.4s ease 0s;
+    @include mq.tablet {
+      width: 40%;
+      gap: 20px;
+    }
+    @include mq.sp {
+      gap: 10px 0;
+      width: 100%;
+    }
+
+    &:hover {
+      box-shadow: 4px 10px 20px 3px rgba(180,141,104,0.4);
+      -webkit-box-shadow: 4px 10px 20px 3px rgba(180,141,104,0.4);
+      -moz-box-shadow: 4px 10px 20px 3px rgba(180,141,104,0.4);
+    }
+
+    &--width {
+      @include mq.tablet {
+        width: 100%;
+      }
+      @include mq.sp {
+        width: unset;
+      }
+    }
+  }
+
+  &__icon {
+    width: 200px;
+    height: 200px;
+    @include mq.tablet {
+      width: 150px;
+      height: auto;
+    }
+    @include mq.sp {
+      width: 100px;
+    }
+  }
+
+  &__title {
+    font: fw.$medium 2rem ff.$rubik;
+    text-transform: uppercase;
+    @include mq.sp {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__description {
+    padding: 0 20px;
+    font: fw.$regular 1.5rem ff.$rubik;
+    color: color.$gray;
+    text-align: center;
+    line-height: 1.5em;
+    white-space: wrap;
+    @include mq.sp {
+      font-size: 1.3rem;
+    }
+  }
+}

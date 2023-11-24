@@ -7,7 +7,7 @@
 .main-visual {
   height: 100vh;
   position: relative;
-  background: url('./src/img/background.png') no-repeat;
+  background: url('../src/img/background.png') no-repeat;
   background-size: 100% 100%;
 
   &::before {
