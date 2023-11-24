@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./src/img/fav-icon.png">
   <link rel="stylesheet" href="./dist/styles.css">
   <script defer src="./src/js/script.js"></script>
-  <title>Perry Portfolio</title>
+  <title>Portfolio | Perry Imbuido</title>
 </head>
 <body>
   <!-- ========================== Header Section =========================== -->
@@ -17,19 +16,19 @@
         <img src="./src/img/logo.png" alt="perry logo" class="image-contain">
       </a>
       <nav class="header__link-list">
-        <a href="" class="header__link-item">
+        <a href="#home" class="header__link-item">
           <span class="header__link-name header__link-name--active">Home</span>
         </a>
-        <a href="" class="header__link-item">
+        <a href="#about" class="header__link-item">
           <span class="header__link-name">About</span>
         </a>
-        <a href="" class="header__link-item">
+        <a href="#services" class="header__link-item">
           <span class="header__link-name">Services</span>
         </a>
-        <a href="" class="header__link-item">
-          <span class="header__link-name">Portfolio</span>
+        <a href="#projects" class="header__link-item">
+          <span class="header__link-name">Projects</span>
         </a>
-        <a href="" class="header__link-item">
+        <a href="#contact" class="header__link-item">
           <span class="header__link-name">Contact</span>
         </a>
       </nav>
@@ -42,7 +41,7 @@
   </header>
 
   <!-- ========================== Main Section =========================== -->
-  <main class="main-visual">
+  <main class="main-visual" id="home">
     <div class="main-visual__wrapper">
       <div class="main-visual__content">
         <div class="main-visual__profile">
@@ -50,8 +49,8 @@
             <h2 class="main-visual__hello">HELLO</h2>
             <h1 class="main-visual__name">
               I'M 
-              J<span class="main-visual__name main-visual__name--o">O</span>HN 
-              P<span class="main-visual__name main-visual__name--e">E</span>RRY
+              J<span class="main-visual__name main-visual__name--orange">O</span>HN 
+              P<span class="main-visual__name main-visual__name--orange">E</span>RRY
             </h1>
             <h3 class="main-visual__role">JUNIOR WEB DEVELOPER</h3>
           </div>
@@ -75,7 +74,7 @@
   </main>
 
   <!-- ========================== About Section =========================== -->
-  <section class="about">
+  <section class="about" id="about">
     <div class="about__wrapper">
       <h3 class="about__header">
         A LITTLE
@@ -119,7 +118,7 @@
   </section>
 
   <!-- ========================== Services Section =========================== -->
-  <section class="services">
+  <section class="services" id="services">
     <div class="services__wrapper">
       <div class="services__heading">
         <h2 class="services__header">SERVICE OFFERS</h2>
@@ -134,7 +133,7 @@
       <ul class="services__list">
         <li class="services__item services__item--width">
           <div class="services__icon">
-            <img src="./src/img/2.png" alt="" class="image-contain">
+            <img src="./src/img/2.png" alt="web development icon" class="image-contain">
           </div>
           <h4 class="services__title">Web Development</h4>
           <p class="services__description">
@@ -143,7 +142,7 @@
         </li>
         <li class="services__item">
           <div class="services__icon">
-            <img src="./src/img/3.png" alt="" class="image-contain">
+            <img src="./src/img/3.png" alt="web design icon" class="image-contain">
           </div>
           <h4 class="services__title">Web Design</h4>
           <p class="services__description">
@@ -152,7 +151,7 @@
         </li>
         <li class="services__item">
           <div class="services__icon">
-            <img src="./src/img/1.png" alt="" class="image-contain">
+            <img src="./src/img/1.png" alt="support icon" class="image-contain">
           </div>
           <h4 class="services__title">Support</h4>
           <p class="services__description">
@@ -160,6 +159,61 @@
           </p>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ========================== Portfolio Section =========================== -->
+  <section class="portfolio" id="projects">
+    <div class="portfolio__wrapper">
+      <div class="portfolio__heading">
+        <h2 class="portfolio__header">RECENT WORKS</h2>
+        <p class="portfolio__caption">
+          Code in Color: Bringing a splash of creativity to lines of code.
+          <br>
+          Check out my recent works – where every project is a playground of innovation and a canvas for digital delight!
+        </p>
+      </div>
+      <div class="portfolio__content-list">
+        <div class="portfolio__item">
+          <div class="portfolio__work-logo">
+            <img src="./src/img/easybank-logo.svg" alt="" class="image-contain">
+          </div>
+          <p class="portfolio__work-description">
+            Easybank landing page. A mobile to web view responsive website built using HTML5, SCSS and JavaScript. 
+          </p>
+          <div class="portfolio__overlay">
+            <a href="https://whrsperry.github.io/easy-bank-landing-page/" target="_blank" class="portfolio__link">
+              <span class="portfolio__visit">visit website -></span>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio__item">
+          <div class="portfolio__work-logo">
+            <img src="./src/img/dream-supporter-logo.png" alt="" class="image-contain">
+          </div>
+          <p class="portfolio__work-description">
+            Dream Supporter landing page. A web to mobile view responsive website with more sections and functionalities. I used Splide.js for the slider/carousel functionality. 
+          </p>
+          <div class="portfolio__overlay">
+            <a href="https://whrsperry.github.io/dreamsupporter-page/" target="_blank" class="portfolio__link">
+              <span class="portfolio__visit">visit website -></span>
+            </a>
+          </div>
+        </div>
+        <div class="portfolio__item">
+          <div class="portfolio__work-logo">
+            <img src="./src/img/medishin-logo.svg" alt="" class="image-contain">
+          </div>
+          <p class="portfolio__work-description">
+            Medishin landing page. A mobile friendly website built using HTML5/PUG.JS, SCSS and JavaScript/TypeScript. It has intricate layouts.
+          </p>
+          <div class="portfolio__overlay portfolio__overlay--progress">
+            <div href="#" target="_blank" class="portfolio__link portfolio__link--development">
+              <span class="portfolio__visit">in development</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </body>
