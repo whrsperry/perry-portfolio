@@ -1,0 +1,25 @@
+@use '../settings/color' as color;
+@use '../settings/font-family' as ff;
+@use '../settings/font-weight' as fw;
+@use '../tools/media-queries' as mq;
+@use '../tools/function' as func;
+
+.contact {
+  &__wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 300px 0 100px;
+    @include mq.tablet {
+      padding: 250px 5% 100px;
+    }
+  }
+
+  &__header {
+    font: fw.$bold 3.5rem ff.$opensans;
+    text-align: center;
+
+    &--orange {
+      color: color.$primary;
+    }
+  }
+}

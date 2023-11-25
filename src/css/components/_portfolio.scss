@@ -5,19 +5,26 @@
 @use '../tools/function' as func;
 
 .portfolio {
-  background-color: color.$orange-f7b;
-  border-radius: 20px 20px 0 0;
+  position: relative;
+
+  &__container {
+    background-color: color.$orange-f7b;
+    border-radius: 20px 20px 0 0;
+  }
 
   &__wrapper {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 100px 0 200px;
     @include mq.mx1200 {
-      padding: 100px 5%;
+      padding: 100px 5% 200px;
     }
     @include mq.tablet {
       max-width: 100%;
-      padding: 50px 5%;
+      padding: 50px 5% 200px;
+    }
+    @include mq.sp {
+      padding: 50px 5% 240px;
     }
   }
 
@@ -135,7 +142,7 @@
     left: 0;
     width: 0;
     height: 100%;
-    background-color: rgba(color.$tangerine, 0.9);
+    background-color: rgba(color.$orange-ff7, 0.9);
     border-radius: 10px;
     overflow: hidden;
     transition: 0.5s ease;
@@ -151,14 +158,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px;
-    border: 2px solid color.$oasis;
+    border: 2px solid color.$turquoise;
     border-radius: 20px;
     @include mq.tablet {
       padding: 8px;
     }
 
     &:hover {
-      background-color: color.$oasis;
+      background-color: color.$turquoise;
     }
 
     &:hover .portfolio__visit {
@@ -191,6 +198,107 @@
     white-space: nowrap;
     @include mq.sp {
       font-size: 1.2rem;
+    }
+  }
+
+  &__hire {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mq.mx1200 {
+      max-width: 100%;
+      padding: 0 5%;
+      left: unset;
+      transform: translateX(0);
+    }
+    @include mq.sp {
+      bottom: -170px;
+    }
+  }
+
+  &__hire-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 50px;
+    background-color: color.$orange-ff7;
+    border-radius: 20px;
+    @include mq.sp {
+      flex-direction: column;
+      padding: 20px 5%;
+    }
+  }
+
+  &__hire-image {
+    width: 170px;
+    height: 170px;
+    @include mq.sp {
+      width: 120px;
+      height: auto;
+    }
+  }
+
+  &__hire-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    @include mq.mx1200{
+      width: 50%;
+    }
+    @include mq.sp {
+      width: 100%;
+    }
+  }
+
+  &__hire-title {
+    margin-bottom: 10px;
+    font: fw.$bold 3.5rem ff.$spacemono;
+    color: color.$white;
+    text-align: center;
+    @include mq.sp {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__hire-caption {
+    font: fw.$regular 1.6rem ff.$spacemono;
+    color: color.$white;
+    text-align: center;
+    @include mq.sp {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__hire-link {
+    padding: 10px 20px;
+    border: 2px solid color.$turquoise;
+    border-radius: 20px;
+    @include mq.sp {
+      margin-top: 20px;
+      padding: 10px;
+    }
+
+    &:hover {
+      background-color: color.$turquoise;
+    }
+
+    &:hover .portfolio__hire-message {
+      font-weight: fw.$bold;
+      color: color.$blue-053;
+    }
+  }
+
+  &__hire-message {
+    font: fw.$medium 1.6rem ff.$spacemono;
+    color: color.$white;
+    white-space: nowrap;
+    @include mq.sp {
+      font-size: 1.4rem;
     }
   }
 }
