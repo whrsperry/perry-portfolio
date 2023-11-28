@@ -2,28 +2,60 @@
   This function handles the hamburger menu in mobile view
 */
 
-const hamburgerMenuNav = () => {
+const handleMobileNav = () => {
 
-  const hamburgerMenu = document.querySelector(".js-hamburger-menu");
-  const hamburgerLines = document.querySelectorAll(".header__hamburger-line");
-  const linkList = document.querySelector(".header__link-list");
+  const mobileNav = document.getElementById("js-mobileNav");
 
-  // Open and close the Hamburger Menu Navigation when clicked
+  mobileNav.addEventListener('click', () => {
+    const navLines = document.querySelectorAll(".header__nav-line");
+    const navText = document.querySelector(".header__nav-text");
+    const nav = document.querySelector(".header__nav");
+    const tabList = document.querySelector(".header__tab-list");
 
-  hamburgerMenu.addEventListener('click', () => {
-    if (linkList.style.display === 'flex') {
-      linkList.style.display = 'none';
-      hamburgerLines.forEach((e) => {
-        e.classList.remove("active");
-      });
-    } else {
-      linkList.style.display = 'flex';
-      hamburgerLines.forEach((e) => {
-        e.classList.add("active");
-      });
+    navLines.forEach(e => e.classList.toggle("active"));
+    navText.classList.toggle("active");
+    nav.classList.toggle("active");
+    tabList.classList.toggle("active");
+  })
+};
+
+
+/* 
+  This function handles the tab navigation
+*/
+
+const handleTabNav = () => {
+  const headerTabList = document.getElementById("js-tabList");
+
+  headerTabList.addEventListener('click', (e) => {
+    const clickedTab = e.target.closest('.header__tab-item');
+
+    if (clickedTab) {
+      e.preventDefault();
+
+      // Remove 'active' class from all tabs
+      const tabs = document.querySelectorAll(".header__tab-item");
+      tabs.forEach(tab => tab.classList.remove('active'));
+
+      // Add 'active' class to the clicked tab
+      clickedTab.classList.add('active');
+
+      // Scroll to the corresponding section
+      const targetSectionId = clickedTab.querySelector('.header__tab-name').getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetSectionId);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
     }
   });
+
+  // Make the home tab the default active tab
+  const defaultTab = document.querySelector(".header__tab-item");
+  if (defaultTab) {
+    defaultTab.classList.add('active');
+  }
 };
 
 // Call the function when the DOM is ready
-document.addEventListener('DOMContentLoaded', hamburgerMenuNav);
+document.addEventListener('DOMContentLoaded', () => {
+  handleMobileNav();
+  handleTabNav();
+});
