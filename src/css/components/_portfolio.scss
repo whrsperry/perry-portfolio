@@ -246,7 +246,7 @@
   &__hire-text-wrapper {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 500px;
     @include mq.mx1200{
       width: 50%;
     }
