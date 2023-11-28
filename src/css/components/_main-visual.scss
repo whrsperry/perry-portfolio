@@ -137,23 +137,13 @@
     }
   }
 
-  &__linkedin {
+  &__icon {
     display: inline-block;
     width: 40px;
     height: 40px;
     @include mq.sp {
       width: 25px;
       height: 25px;
-    }
-  }
-
-  &__github {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    @include mq.sp {
-      width: 40px;
-      height: 40px;
     }
   }
 

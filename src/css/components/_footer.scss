@@ -1,0 +1,70 @@
+@use '../settings/color' as color;
+@use '../settings/font-family' as ff;
+@use '../settings/font-weight' as fw;
+@use '../tools/media-queries' as mq;
+@use '../tools/function' as func;
+
+.footer {
+  background-color: color.$oasis;
+
+  &__wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 40px 0;
+    @include mq.mx1200 {
+      padding: 40px 5%;
+    }
+    @include mq.tablet {
+      padding: 30px 5%;
+    }
+    @include mq.sp {
+      padding: 25px 5%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 0 15px;
+    @include mq.tablet {
+      margin-top: 20px;
+    }
+    @include mq.sp {
+      margin-top: 10px;
+      gap: 0 10px;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    @include mq.sp {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &__text {
+    font: fw.$regular 1.4rem ff.$spacemono;
+    color: color.$gray;
+    text-align: center;
+
+    &--copyright {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__logo {
+    margin: 5px;
+    width: 120px;
+    height: fit-content;
+  }
+}
