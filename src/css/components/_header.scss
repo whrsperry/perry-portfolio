@@ -10,57 +10,68 @@
   left: 0;
   width: 100%;
   background-color: color.$oasis;
-  z-index: 1;
+  z-index: 999;
 
   &__wrapper {
-    position: relative;
     display: flex;
     align-items: center;
-    max-width: calc(1000px + 10%);
+    justify-content: space-between;
+    max-width: 1140px;
     width: 100%;
     height: 80px;
     margin: 0 auto;
     @include mq.mx1200 {
       padding: 20px 5%;
     }
-    @include mq.tablet {
-      flex-direction: column;
-      align-items: flex-start;
-      height: unset;
-    }
   }
 
   &__logo {
     display: inline-block;
-    width: 150px;
+    width: 120px;
     height: auto;
-    @include mq.tablet {
-      width: 120px;
-      max-width: 100%;
-    }
     @include mq.sp {
       width: 100px;
     }
   }
 
-  &__link-list {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+  &__nav {
     @include mq.tablet {
-      flex-direction: column;
-      display: none;
-      justify-content: unset;
-      width: 100%;
-      margin-top: 10px;
-      padding-left: 10px;
-      gap: 20px 0;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      width: 0;
+      height: 100vh;
+      background-color: color.$oasis;
+      transition: 0.5s;
+      overflow: hidden;
+    }
+
+    &.active {
+      @include mq.tablet {
+        width: 50%;
+      }
     }
   }
 
-  &__link-item {
+  &__tab-list {
+    display: flex;
+    width: 100%;
+    @include mq.tablet {
+      flex-direction: column;
+      width: 100%;
+      padding: 30px 5% 0;
+      gap: 40px 0;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &__tab-item {
     position: relative;
-    display: inline-block;
     @include mq.tablet {
       width: 100%;
     }
@@ -70,9 +81,10 @@
         content: "";
         position: absolute;
         left: 0;
-        bottom: -10px;
+        bottom: -15px;
         width: 100%;
-        border: 1px dotted color.$gray-b7b;
+        border: 1px solid color.$gray-b7b;
+        transition: 0.4s linear;
       }
     }
 
@@ -82,31 +94,39 @@
         margin-right: 0;
       }
     }
-  }
 
-  &__link-name {
-    position: relative;
-    font: fw.$semibold 1.5rem ff.$rubik;
-    text-transform: uppercase;
-    color: color.$blue-053;
-    @include mq.sp {
-      font-size: 1.3rem;
-    }
-
-    &--active {
-      color: color.$orange-ff6;
-
+    &.active {
       &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        left: 0;
-        bottom: -10px;
-        border: 1px solid;
-        @include mq.tablet {
-          border: unset;
+        border: 1px solid color.$primary;
+      }
+
+      .header__tab-name {
+        color: color.$orange-ff6;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: -15px;
+          border: 1px solid;
+          @include mq.tablet {
+            border: unset;
+          }
         }
       }
+    }
+  }
+
+  &__tab-name {
+    position: relative;
+    font: fw.$bold 1.5rem ff.$rubik;
+    color: color.$blue-053;
+    @include mq.tablet {
+      font-size: 1.7rem;
+    }
+    @include mq.sp {
+      font-size: 1.5rem;
     }
 
     &:hover {
@@ -117,48 +137,54 @@
         position: absolute;
         width: 100%;
         left: 0;
-        bottom: -10px;
+        bottom: -15px;
         border: 1px solid;
       }
     }
   }
 
-  &__hamburger-menu {
-    position: absolute;
-    top: 30px;
-    right: 50px;
+  &__mobile-nav {
     display: none;
-    gap: 5px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
     @include mq.tablet {
       display: flex;
       flex-direction: column;
-    }
-    @include mq.sp {
-      right: 30px;
+      gap: 5px 0;
     }
   }
 
-  &__hamburger-line {
+  &__nav-line {
     width: 30px;
     border: 2px solid color.$blue-053;
-    transition: all 200ms linear;
+    transition: 0.5s;
+    transform: skew(5deg);
+
+    &.active {
+      border: 2px solid color.$primary;
+
+      &:first-child {
+        transform: rotate(-45deg) translate(-5px, 5px);
+      }
+  
+      &:nth-child(2) {
+        opacity: 0;
+      }
+  
+      &:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -5px);
+      }
+    }
   }
 
-  &__hamburger-line.active {
-    &:first-child {
-      position: relative;
-      top: 10px;
-      transform: rotate(-45deg);
-    }
+  &__nav-text {
+    font: fw.$semibold 1rem ff.$rubik;
+    color: color.$blue-053;
 
-    &:nth-child(2) {
-      opacity: 0;
-    }
-
-    &:last-child {
-      position: relative;
-      bottom: 6px;
-      transform: rotate(45deg);
+    &.active {
+      font-weight: fw.$bold;
+      color: color.$primary;
     }
   }
 }

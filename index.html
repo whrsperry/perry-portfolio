@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Project's JavaScript -->
-  <script defer src="./src/js/script.js"></script>
+  <script src="./src/js/script.js" defer></script>
 
   <title>Portfolio | Perry Imbuido</title>
 </head>
@@ -23,33 +23,36 @@
       <a href="#" class="header__logo">
         <img src="./src/img/logo.png" alt="perry logo" class="image-contain">
       </a>
-      <nav class="header__link-list">
-        <a href="#home" class="header__link-item">
-          <span class="header__link-name header__link-name--active">Home</span>
-        </a>
-        <a href="#about" class="header__link-item">
-          <span class="header__link-name">About</span>
-        </a>
-        <a href="#services" class="header__link-item">
-          <span class="header__link-name">Services</span>
-        </a>
-        <a href="#projects" class="header__link-item">
-          <span class="header__link-name">Projects</span>
-        </a>
-        <a href="#contact" class="header__link-item">
-          <span class="header__link-name">Contact</span>
-        </a>
+      <button class="header__mobile-nav" id="js-mobileNav">
+        <span class="header__nav-line"></span>
+        <span class="header__nav-line"></span>
+        <span class="header__nav-line"></span>
+        <span class="header__nav-text">MENU</span>
+      </button>
+      <nav class="header__nav">
+        <ul class="header__tab-list" id="js-tabList">
+          <li class="header__tab-item">
+            <a class="header__tab-name" href="#home">HOME</a>
+          </li>
+          <li class="header__tab-item">
+            <a class="header__tab-name" href="#about">ABOUT</a>
+          </li>
+          <li class="header__tab-item">
+            <a class="header__tab-name" href="#services">SERVICES</a>
+          </li>
+          <li class="header__tab-item">
+            <a class="header__tab-name" href="#projects">PROJECTS</a>
+          </li>
+          <li class="header__tab-item">
+            <a class="header__tab-name" href="#contact">CONTACT</a>
+          </li>
+        </ul>
       </nav>
-      <div class="header__hamburger-menu js-hamburger-menu">
-        <span class="header__hamburger-line"></span>
-        <span class="header__hamburger-line"></span>
-        <span class="header__hamburger-line"></span>
-      </div>
     </div>
   </header>
 
   <!-- ========================== Main Section =========================== -->
-  <main class="main-visual" id="home">
+  <main class="main-visual section" id="home">
     <div class="main-visual__wrapper">
       <div class="main-visual__content">
         <div class="main-visual__profile">
@@ -88,7 +91,7 @@
   </main>
 
   <!-- ========================== About Section =========================== -->
-  <section class="about" id="about">
+  <section class="about section" id="about">
     <div class="about__wrapper">
       <h3 class="about__header">
         A LITTLE
@@ -132,7 +135,7 @@
   </section>
 
   <!-- ========================== Services Section =========================== -->
-  <section class="services" id="services">
+  <section class="services section" id="services">
     <div class="services__wrapper">
       <div class="services__heading">
         <h2 class="services__header">SERVICE OFFERS</h2>
@@ -177,7 +180,7 @@
   </section>
 
   <!-- ========================== Portfolio Section =========================== -->
-  <section class="portfolio" id="projects">
+  <section class="portfolio section" id="projects">
     <div class="portfolio__container">
       <div class="portfolio__wrapper">
         <div class="portfolio__heading">
@@ -248,7 +251,7 @@
   </section>
 
   <!-- ========================== Contact Section =========================== -->
-  <section class="contact" id="contact">
+  <section class="contact section" id="contact">
     <div class="contact__wrapper">
       <div class="contact__heading">
         <h2 class="contact__header">
@@ -261,21 +264,21 @@
       <div class="contact__list">
         <a class="contact__item" href="https://www.google.com/maps/search/?api=1&query=Barangay+Pansol,+Quezon+City,+Philippines+1108" target="_blank">
           <div class="contact__item-icon">
-            <img src="./src/img/location.png" alt="address icon" class="image-contain">
+            <img src="./src/img/icons/location.png" alt="address icon" class="image-contain">
           </div>
           <span class="contact__item-title">Address</span>
           <span class="contact__item-detail">Barangay Pansol, Quezon City, Philippines 1108</span>
         </a>
         <a class="contact__item" href="tel:+639626610372" target="_blank">
           <div class="contact__item-icon">
-            <img src="./src/img/viber.png" alt="phone icon" class="image-contain">
+            <img src="./src/img/icons/viber.png" alt="phone icon" class="image-contain">
           </div>
           <span class="contact__item-title">Phone</span>
           <span class="contact__item-detail">+63 962 661 0372</span>
         </a>
         <a class="contact__item" href="mailto:jperryimbuido@gmail.com" target="_blank">
           <div class="contact__item-icon">
-            <img src="./src/img/email.png" alt="email icon" class="image-contain">
+            <img src="./src/img/icons/email.png" alt="email icon" class="image-contain">
           </div>
           <span class="contact__item-title">Email</span>
           <span class="contact__item-detail">jperryimbuido@gmail.com</span>
