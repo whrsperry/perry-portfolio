@@ -25,20 +25,5 @@ const hamburgerMenuNav = () => {
   });
 };
 
-document.getElementById('addressItem').addEventListener('click', function() {
-  // Open Google Maps with the specified address
-  window.location.href = 'https://www.google.com/maps/search/?api=1&query=Barangay+Pansol,+Quezon+City,+Philippines+1108';
-});
-
-document.getElementById('phoneItem').addEventListener('click', function() {
-  // Initiate a phone call
-  window.location.href = 'tel:+63962661372';
-});
-
-document.getElementById('emailItem').addEventListener('click', function() {
-  // Compose a blank email
-  window.location.href = 'mailto:jperryimbuido@gmail.com';
-});
-
 // Call the function when the DOM is ready
 document.addEventListener('DOMContentLoaded', hamburgerMenuNav);
