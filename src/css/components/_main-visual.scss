@@ -5,56 +5,55 @@
 @use '../tools/function' as func;
 
 .main-visual {
-  height: 100vh;
   position: relative;
-  background: url('../src/img/background.png') no-repeat;
-  background-size: 100% 100%;
 
   &::before {
     content: "PERRY";
     position: absolute;
     top: 50%;
-    left: -4%;
+    left: -5%;
     transform: translate(5%, -50%);
-    font: fw.$bold 18rem ff.$opensans;
-    color: color.$gray-b7b;
+    font: fw.$bold 20rem ff.$rubik;
+    color: rgba(color.$gray-b7b, 0.3);
     z-index: -1;
-    @include mq.tablet {
-      width: 100%;
-      top: 30%;
-      left: -10%;
-      font-size: 12rem;
-      overflow: hidden;
+    @include mq.mx1200 {
+      left: -15%;
     }
-    @include mq.sp {
+    @include mq.tablet {
       display: flex;
       justify-content: center;
       width: 100%;
+      top: 20%;
       left: 50%;
-      transform: translate(-50%, -30%);
+      transform: translate(-50%, -50%);
+      font-size: 15rem;
       text-align: center;
       white-space: nowrap;
+      overflow: hidden;
     }
   }
 
   &__wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     max-width: 1140px;
     width: 100%;
+    margin: 80px auto 0;
+    padding: 5% 0 150px;
     @include mq.mx1200 {
-      padding: 0 5%;
+      margin-top: 80px;
+      padding: 5% 5% 150px;
     }
     @include mq.tablet {
-      margin-top: 4%;
+      padding-bottom: 80px;
+    }
+    @include mq.sp {
+      padding-bottom: 60px;
     }
   }
 
   &__content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     @include mq.tablet {
       flex-direction: column-reverse;
     }
@@ -63,17 +62,30 @@
   &__profile {
     width: 50%;
     flex-grow: 1;
+    @include mq.tablet {
+      margin-top: 40px;
+    }
     @include mq.sp {
       width: 100%;
       margin-top: 50px;
     }
   }
 
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+    width: 100%;
+    @include mq.sp {
+      gap: 10px 0;
+    }
+  }
+
   &__hello {
     position: relative;
-    font: fw.$bold 4rem ff.$opensans;
+    font: fw.$medium 3rem ff.$rubik;
     @include mq.tablet {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
     @include mq.sp {
       font-size: 2rem;
@@ -83,25 +95,25 @@
       content: "";
       position: absolute;
       top: 50%;
-      width: 400px;
-      border: 2px solid color.$black;
+      width: 50%;
+      border: 1px solid color.$gray;
       margin-left: 15px;
       @include mq.tablet {
-        width: 280px;
+        width: 300px;
       }
       @include mq.sp {
-        border: unset;
+        width: 35%;
       }
     }
   }
 
   &__name {
-    font: fw.$bold 7rem ff.$opensans;
+    font: fw.$bold 6rem ff.$rubik;
     @include mq.tablet {
       font-size: 5rem;
     }
     @include mq.sp {
-      font-size: 3rem;
+      font-size: 4rem;
     }
 
     &--orange {
@@ -110,21 +122,18 @@
   }
 
   &__role {
-    margin-top: 20px;
-    font: fw.$bold 3rem ff.$rubik;
+    font: fw.$medium 4rem ff.$rubik;
     color: color.$gray;
     @include mq.tablet {
-      margin-top: 15px;
-      font-size: 2.8rem;
+      font-size: 3rem;
     }
     @include mq.sp {
-      margin-top: 10px;
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
   }
 
   &__links {
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     align-items: center;
     gap: 0 15px;
@@ -132,8 +141,7 @@
       margin-top: 20px;
     }
     @include mq.sp {
-      margin-top: 10px;
-      gap: 0 10px;
+      gap: 0 15px;
     }
   }
 
@@ -141,26 +149,87 @@
     display: inline-block;
     width: 40px;
     height: 40px;
+    box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    transition: 0.2s ease;
     @include mq.sp {
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    margin-top: 40px;
+    gap: 0 20px;
+    @include mq.tablet {
+      flex-direction: column;
+      margin-top: 30px;
+      gap: 14px 0;
     }
   }
 
   &__get-cv {
-    padding: 10px 20px;
+    width: 120px;
+    padding: 12px;
     font: fw.$bold 1.6rem ff.$spacemono;
     word-spacing: -5px;
-    border: 2px solid color.$primary;
-    border-radius: 4px;
+    background-color: transparent;
+    border: 2px solid color.$orange-ff6;
+    outline: 0;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+    cursor: pointer;
+    transition: 0.2s ease-out;
     @include mq.tablet {
-      padding: 5px 3%;
+      width: 100%;
+      padding: 15px 3%;
+      font-size: 1.6rem;
+    }
+    @include mq.sp {
+      padding: 10px 3%;
       font-size: 1.4rem;
     }
 
     &:hover {
-      background-color: color.$primary;
-      color: color.$white;
+      background-color: color.$orange-ff6;     color: color.$white;
+      box-shadow: 4px 4px 0 rgba(color.$black, 0.8);
+      transform: translate(-4px,-4px);
+    }
+  }
+
+  &__hire-me {
+    width: 120px;
+    padding: 12px;
+    font: fw.$bold 1.6rem ff.$spacemono;
+    word-spacing: -5px;
+    background-color: transparent;
+    border: 2px solid color.$orange-ff6;
+    outline: 0;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    @include mq.tablet {
+      width: 100%;
+      padding: 15px 3%;
+      font-size: 1.6rem;
+    }
+    @include mq.sp {
+      padding: 10px 3%;
+      font-size: 1.4rem;
+    }
+
+    &:hover {
+      background-color: color.$orange-ff6;     color: color.$white;
+      box-shadow: 4px 4px 0 rgba(color.$black, 0.8);
+      transform: translate(-4px,-4px);
     }
   }
 
@@ -169,6 +238,7 @@
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
+    box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #E6ECF8;
     @include mq.tablet {
       width: 200px;
       height: 200px;
