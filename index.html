@@ -80,8 +80,8 @@
             </a>
           </div>
           <div class="main-visual__button-container">
-            <button class="main-visual__hire-me">HIRE ME</button>
-            <button class="main-visual__get-cv">GET CV</button>
+            <button class="main-visual__hire-me" id="js-hireMeButton">HIRE ME</button>
+            <a class="main-visual__get-cv" href="./src/John Perry Imbuido_CV-2023.pdf" download="John Perry Imbuido_CV-2023.pdf">GET CV</a>
           </div>
         </div>
         <div class="main-visual__main-image">
@@ -237,16 +237,18 @@
     </div>
     <div class="portfolio__hire">
       <div class="portfolio__hire-wrapper">
-        <div class="portfolio__hire-image">
-          <img src="./src/img/head.png" alt="hire me icon" class="image-contain">
+        <div class="portfolio__hire-content">
+          <div class="portfolio__hire-image">
+            <img src="./src/img/head.png" alt="hire me icon" class="image-contain">
+          </div>
+          <div class="portfolio__hire-text-wrapper">
+            <span class="portfolio__hire-title">Hire Me</span>
+            <span class="portfolio__hire-caption">Ready to turn coffee into code, and ideas into reality! Let's connect and transform challenges into opportunities together.</span>
+          </div>
+          <a class="portfolio__hire-link" href="./src/John Perry Imbuido_CV-2023.pdf" download="John Perry Imbuido_CV-2023.pdf">
+            <span class="portfolio__hire-message">Download CV</span>
+          </a>
         </div>
-        <div class="portfolio__hire-text-wrapper">
-          <span class="portfolio__hire-title">Hire Me</span>
-          <span class="portfolio__hire-caption">Ready to turn coffee into code and ideas into innovation! Let's transform challenges into opportunities together.</span>
-        </div>
-        <a href="#contact" class="portfolio__hire-link">
-          <span class="portfolio__hire-message">Let's do this</span>
-        </a>
       </div>
     </div>
   </section>
@@ -255,11 +257,8 @@
   <section class="contact section" id="contact">
     <div class="contact__wrapper">
       <div class="contact__heading">
-        <h2 class="contact__header">
-          MY
-          <span class="contact__header contact__header--orange">CONTACT</span>
-        </h2>
-        <p class="contact__caption">Let's connect and turn ideas into reality! Reach out - I don't bite, but I do write code!
+        <h2 class="contact__header">MY CONTACT</h2>
+        <p class="contact__caption">Reach out - I don't bite, but I do write code.
         </p>
       </div>
       <div class="contact__list">
@@ -307,9 +306,9 @@
             </a>
         </div>
         <span class="footer__text">Handcrafted by me</span>
-        <div class="footer__logo">
+        <a class="footer__logo" href="#">
           <img src="./src/img/logo.png" alt="Perry Imbuido logo" class="image-contain">
-        </div>
+        </a>
         <span class="footer__text footer__text--copyright">All Rights Reserved &copy; 2023</span>
       </div>
     </div>

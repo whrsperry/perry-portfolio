@@ -54,8 +54,23 @@ const handleTabNav = () => {
   }
 };
 
+/* 
+  This function handles the "Hire Me" button so that it goes to Hire Section/Element
+*/
+
+const handleScrollToSection = () => {
+  const hireMeButton = document.getElementById("js-hireMeButton");
+  const hireMeSection = document.querySelector(".portfolio__hire");
+
+  hireMeButton.addEventListener('click', () => {
+    // scrolls into the hire me section smoothly
+    hireMeSection.scrollIntoView({ behavior: 'smooth' });
+  });
+};
+
 // Call the function when the DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   handleMobileNav();
   handleTabNav();
+  handleScrollToSection();
 });
