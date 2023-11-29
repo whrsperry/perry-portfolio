@@ -6,7 +6,7 @@
 
 .about {
   background-color: color.$orange-f7b;
-  border-radius: 0 0 20px 20px;
+  border-radius: 0 0 30px 30px;
 
   &__wrapper {
     max-width: 1140px;
@@ -20,19 +20,38 @@
     }
   }
 
+  &__heading {
+    margin-bottom: 60px;
+    @include mq.tablet {
+      margin-bottom: 40px;
+    }
+    @include mq.sp {
+      margin-bottom: 20px;
+    }
+  }
+
   &__header {
     position: relative;
-    margin-bottom: 50px;
-    font: fw.$bold 2.4rem ff.$opensans;
+    font: fw.$bold 3.5rem ff.$rubik;
     color: color.$white;
     text-align: center;
-    @include mq.sp {
-      margin-bottom: 30px;
-      font-size: 2rem;
+    line-height: func.getem(35, 70);
+    @include mq.tablet {
+      font-size: 3rem;
     }
 
     &--about {
       color: color.$blue-053;
+    }
+  }
+
+  &__caption {
+    font: fw.$regular 1.5rem ff.$opensans;
+    color: color.$blue-053;
+    text-align: center;
+    line-height: func.getem(15, 25);
+    @include mq.tablet {
+      font-size: 1.4rem;
     }
   }
 
@@ -81,7 +100,7 @@
   &__info-data {
     width: 50%;
     font: fw.$regular 1.6rem ff.$spacemono;
-    color: color.$white;
+    color: color.$blue-053;
     @include mq.sp {
       width: 100%;
       font-size: 1.4rem;
@@ -127,18 +146,18 @@
 
   &__intro {
     display: block;
-    font: fw.$medium 1.6rem ff.$spacemono;
-    color: color.$white;
+    font: fw.$regular 1.6rem ff.$rubik;
+    color: color.$blue-053;
     @include mq.sp {
       font-size: 1.4rem;
     }
   }
 
   &__intro-text {
-    font: fw.$regular 1.5rem ff.$spacemono;
-    color: color.$white;
+    font: fw.$regular 1.5rem ff.$rubik;
+    color: color.$blue-053;
     letter-spacing: 0.05em;
-    line-height: 1.5;
+    line-height: func.getem(15, 25);
     white-space: pre-line;
     @include mq.sp {
       font-size: 1.3rem;
