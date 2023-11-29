@@ -60,7 +60,7 @@ const handleTabNav = () => {
 
 const handleScrollToSection = () => {
   const hireMeButton = document.getElementById("js-hireMeButton");
-  const hireMeSection = document.querySelector(".portfolio__hire");
+  const hireMeSection = document.querySelector(".project__hire");
 
   hireMeButton.addEventListener('click', () => {
     // scrolls into the hire me section smoothly

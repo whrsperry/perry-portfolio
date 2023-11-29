@@ -21,21 +21,21 @@
   }
 
   &__heading {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+    @include mq.tablet {
+      margin-bottom: 40px;
+    }
     @include mq.sp {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   }
 
   &__header {
     font: fw.$bold 3.5rem ff.$rubik;
     text-align: center;
-    line-height: 2em;
+    line-height: func.getem(35, 70);
     @include mq.tablet {
-      font-size: 2.8rem;
-    }
-    @include mq.sp {
-      font-size: 2.2rem;
+      font-size: 3rem;
     }
 
     &--orange {
@@ -45,13 +45,11 @@
 
   &__caption {
     font: fw.$regular 1.5rem ff.$opensans;
-    color: color.$blue-053;
+    color: color.$gray;
     text-align: center;
+    line-height: func.getem(15, 25);
     @include mq.tablet {
-      font-size: 1.3rem;
-    }
-    @include mq.sp {
-      font-size: 1.1rem;
+      font-size: 1.4rem;
     }
   }
 
