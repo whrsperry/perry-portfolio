@@ -38,18 +38,13 @@
     }
     @include mq.sp {
       margin-top: 10px;
-      gap: 0 10px;
     }
   }
 
   &__icon {
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    @include mq.sp {
-      width: 25px;
-      height: 25px;
-    }
+    width: 40px;
+    height: 40px;
   }
 
   &__text {
