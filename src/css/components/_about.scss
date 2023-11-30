@@ -55,72 +55,84 @@
     }
   }
 
-  &__info-wrapper {
+  &__info-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     @include mq.sp {
       flex-direction: column;
-      gap: 20px 0;
+      padding: 0 3%;
+      gap: 30px 0;
     }
   }
 
-  &__info-list {
-    width: 40%;
-    @include mq.sp {
-      width: 100%;
-    }
-  }
-
-  &__info {
+  &__column-wrapper {
     display: flex;
-    width: 100%;
-    gap: 0 5px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    gap: 0 20px;
     @include mq.sp {
-      flex-direction: column;
+      flex-direction: row;
       width: 100%;
-      gap: 0;
-    }
-    
-    &:not(:last-child) {
-      margin-bottom: 10px;
+      gap: 0 5%;
     }
   }
 
-  &__info-label {
-    width: 40%;
+  &__label-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+  }
+
+  &__label {
+    font: fw.$medium 1.6rem ff.$spacemono;
+    color: color.$blue-053;
+    white-space: nowrap;
+    @include mq.sp {
+      font-size: 1.4rem;
+    }
+    @include mq.mxN(380px) {
+      font-size: 1.2rem;
+    }
+    @include mq.mxN(320px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__data-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+  }
+
+  &__data {
     font: fw.$semibold 1.6rem ff.$spacemono;
     color: color.$blue-053;
     @include mq.sp {
-      width: 100%;
       font-size: 1.4rem;
     }
-  }
-
-  &__info-data {
-    width: 50%;
-    font: fw.$regular 1.6rem ff.$spacemono;
-    color: color.$blue-053;
-    @include mq.sp {
-      width: 100%;
-      font-size: 1.4rem;
+    @include mq.mxN(380px) {
+      font-size: 1.2rem;
+    }
+    @include mq.mxN(320px) {
+      font-size: 1.1rem;
     }
   }
 
   &__border {
     border: 2px solid color.$white;
     height: 200px;
-    margin: 0 30px;
     @include mq.sp {
       width: 100%;
       height: unset;
       margin: 0;
-      border: unset;
+      border: 1px solid color.$white;
     }
   }
 
-  &__text-wrapper {
-    width: 50%;
+  &__experience-wrapper {
+    width: 40%;
     max-height: 200px;
     padding-right: 20px;
     overflow-y: auto;
@@ -144,24 +156,18 @@
     }
   }
 
-  &__intro {
-    display: block;
+  &__experience-text {
     font: fw.$regular 1.6rem ff.$rubik;
     color: color.$blue-053;
-    @include mq.sp {
-      font-size: 1.4rem;
-    }
-  }
-
-  &__intro-text {
-    font: fw.$regular 1.5rem ff.$rubik;
-    color: color.$blue-053;
-    letter-spacing: 0.05em;
-    line-height: func.getem(15, 25);
+    word-spacing: 0.09em;
+    line-height: func.getem(16, 30);
     white-space: pre-line;
     @include mq.sp {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       text-align: left;
+    }
+    @include mq.mxN(380px) {
+      font-size: 1.2rem;
     }
   }
 
